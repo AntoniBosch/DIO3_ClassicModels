@@ -48,12 +48,12 @@ namespace OrderViewer
                 olv.ProductName = line.ProductName;
                 olv.PriceEach = line.PriceEach;
                 olv.QuantityOrdered = line.QuantityOrdered;
-                //MemoryStream ms = new MemoryStream(line.Image);
-                //Image orderImage = Image.FromStream(ms);
-                //olv.OrderImage = orderImage;
+                MemoryStream ms = new MemoryStream(line.Image);
+                Image orderImage = Image.FromStream(ms);
+                olv.OrderImage = orderImage;
                 olv.OnOrderLineCreated();
                 flowLayoutPanel.Controls.Add(olv);
-
+                
             }
             
             //olv.ProductName = "Test Product";

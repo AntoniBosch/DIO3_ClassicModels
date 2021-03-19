@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -51,7 +52,6 @@ namespace OrderLineViewer
             set { _image = value; }
         }
 
-
         public OrderLineViewerControl()
         {
             InitializeComponent();
@@ -64,7 +64,21 @@ namespace OrderLineViewer
             priceEachLabel.Text = "Price: " + PriceEach.ToString();
             totalLabel.Text = "Total: " + (PriceEach * QuantityOrdered).ToString();
             orderLinePictureBox.Image = OrderImage;
+        }
 
+        private void orderLinePictureBox_Click(object sender, EventArgs e)
+        {
+            DataAccess db = new DataAccess();
+            var productLines = db.GetProductLines();
+            Random rnd = new Random();
+            int rndIndex = rnd.Next(0, productLines.Count);
+            String rndProductLine = productLines[rndIndex];
+
+            var newPhoto = db.GetNewImage(rndProductLine);
+
+            MemoryStream ms = new MemoryStream(newPhoto.Image);
+            Image img = Image.FromStream(ms);
+            orderLinePictureBox.Image = img;
         }
     }
 }

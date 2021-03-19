@@ -40,7 +40,7 @@ namespace OrderLineViewer
             // productNameLabel
             // 
             this.productNameLabel.AutoSize = true;
-            this.productNameLabel.Location = new System.Drawing.Point(162, 34);
+            this.productNameLabel.Location = new System.Drawing.Point(181, 34);
             this.productNameLabel.Name = "productNameLabel";
             this.productNameLabel.Size = new System.Drawing.Size(35, 13);
             this.productNameLabel.TabIndex = 0;
@@ -75,11 +75,12 @@ namespace OrderLineViewer
             // 
             // orderLinePictureBox
             // 
-            this.orderLinePictureBox.Location = new System.Drawing.Point(31, 15);
+            this.orderLinePictureBox.Location = new System.Drawing.Point(31, 3);
             this.orderLinePictureBox.Name = "orderLinePictureBox";
-            this.orderLinePictureBox.Size = new System.Drawing.Size(100, 50);
+            this.orderLinePictureBox.Size = new System.Drawing.Size(107, 82);
             this.orderLinePictureBox.TabIndex = 4;
             this.orderLinePictureBox.TabStop = false;
+            this.orderLinePictureBox.Click += new System.EventHandler(this.orderLinePictureBox_Click);
             // 
             // OrderLineViewerControl
             // 
