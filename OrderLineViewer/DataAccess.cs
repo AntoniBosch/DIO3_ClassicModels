@@ -10,7 +10,7 @@ namespace OrderLineViewer
 {
     class DataAccess
     {
-        string connectionString = "Server=localhost;Port=3306;Database=classicmodels;Uid=ClassicModelsAdmin;Pwd=tB847512963";
+        string connectionString = "Server=localhost;Port=3306;Database=classicmodels;Uid=ClassicModelsAdmin;Pwd=";
 
         public List<String> GetProductLines()
         {
